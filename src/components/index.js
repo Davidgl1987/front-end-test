@@ -1,2 +1,4 @@
-export { Header } from './Header'
-export { CartButton } from './CartButton'
+export * from './Header'
+export * from './CartButton'
+export * from './ProductItem'
+export * from './SearchBox'

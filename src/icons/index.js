@@ -1,1 +1,1 @@
-export { CartIcon } from './CartIcon'
+export * from './CartIcon'

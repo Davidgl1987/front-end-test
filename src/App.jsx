@@ -6,7 +6,7 @@ function App () {
   return (
     <BrowserRouter>
       <Header />
-      <main className='bg-cyan-50 p-4 h-screen pt-20'>
+      <main className='bg-cyan-50 p-4 h-auto min-h-screen pt-20'>
         <Routes>
           <Route
             index

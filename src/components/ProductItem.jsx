@@ -1,11 +1,14 @@
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 export const ProductItem = ({ product }) => {
   return (
-    <div className='w-full max-w-sm bg-white  rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all'>
+    <div className='w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all'>
       <Link to={`product/${product.id}`}>
-        <img className='p-8 rounded-t-lg mx-auto' src={product.imgUrl} alt='product image' />
+        <img
+          className='p-8 mx-auto'
+          src={product.imgUrl}
+          alt={`Image of ${product.brand} ${product.model}`}
+        />
         <div className='px-5 pb-5'>
           <h5 className='text-xl font-semibold tracking-tight text-gray-900'>{product.model}</h5>
           <span className='text-sm text-gray-500'>{product.brand}</span>
@@ -22,14 +25,4 @@ export const ProductItem = ({ product }) => {
       </Link>
     </div>
   )
-}
-
-ProductItem.propTypes = {
-  product: PropTypes.shape({
-    id: PropTypes.string,
-    imgUrl: PropTypes.string,
-    model: PropTypes.string,
-    brand: PropTypes.string,
-    price: PropTypes.string
-  })
 }

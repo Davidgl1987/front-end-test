@@ -1,5 +1,5 @@
 export const URL_API_PRODUCTS = 'https://itx-frontend-test.onrender.com/api/product'
-export const URL_API_PRODUCT_DETAIL = 'https://itx-frontend-test.onrender.com/api/product/'
+export const URL_API_PRODUCT_DETAIL = 'https://itx-frontend-test.onrender.com/api/product'
 
 export const fetchProducts = async () => {
   let productsList = []

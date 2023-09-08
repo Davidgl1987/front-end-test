@@ -3,7 +3,7 @@ export const URL_API_PRODUCT_DETAIL = 'https://itx-frontend-test.onrender.com/ap
 
 export const fetchProducts = async () => {
   const response = await fetch(URL_API_PRODUCTS)
-  if (!response.ok) { throw new Error('Algo ha ido mal...') }
+  if (!response.ok) throw new Error('Algo ha ido mal...')
   return await response.json()
 }
 

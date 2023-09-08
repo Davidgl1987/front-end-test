@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Breadcrumbs, ProductItem, Search } from '../components'
+import { Breadcrumbs, Error, Loader, ProductItem, Search } from '../components'
 import { useProducts } from '../hooks'
 
 export const ProductListPage = () => {
@@ -10,9 +10,9 @@ export const ProductListPage = () => {
     if (products) setFilteredProducts(products)
   }, [products])
 
-  if (isLoading) return <div>loading...</div>
+  if (isLoading) return <Loader />
 
-  if (error) return <div>Error</div>
+  if (error) return <Error text={error.message} />
 
   const filterProducts = (word) => {
     const searchedProducts = products.filter(product => product.brand.toLowerCase().includes(word.toLowerCase()) || product.model.toLowerCase().includes(word.toLowerCase()))

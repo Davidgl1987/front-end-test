@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { Actions, Breadcrumbs, Description, Image } from '../components'
+import { Actions, Breadcrumbs, Description, Error, Image, Loader } from '../components'
 import { useProductDetail } from '../hooks/useProductDetail'
 
 export const ProductDetailsPage = () => {
@@ -7,11 +7,9 @@ export const ProductDetailsPage = () => {
 
   const { data: product, isLoading, error } = useProductDetail(productId)
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <Loader />
 
-  if (error) return <div>Error</div>
-
-  if (!product) return <div>No hay producto</div>
+  if (error) return <Error text={error.message} />
 
   return (
     <div className='max-w-screen-xl mx-auto p-4'>

@@ -1,19 +1,15 @@
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchProductDetail } from '../services/api'
 import { Actions, Breadcrumbs, Description, Image } from '../components'
+import { useProductDetail } from '../hooks/useProductDetail'
 
 export const ProductDetailsPage = () => {
   const { productId } = useParams()
-  const [product, setProduct] = useState(null)
 
-  useEffect(() => {
-    const getProduct = async () => {
-      const product = await fetchProductDetail(productId)
-      setProduct(() => product)
-    }
-    getProduct()
-  }, [productId])
+  const { data: product, isLoading, error } = useProductDetail(productId)
+
+  if (isLoading) return <div>Loading...</div>
+
+  if (error) return <div>Error</div>
 
   if (!product) return <div>No hay producto</div>
 

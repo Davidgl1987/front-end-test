@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 export const Breadcrumbs = ({ breadcrumbs }) => {
-  console.log({ breadcrumbs })
   return (
     <nav className='flex py-4' aria-label='Breadcrumb'>
       <ol className='inline-flex items-center space-x-1 md:space-x-3'>
@@ -24,6 +23,5 @@ export const Breadcrumbs = ({ breadcrumbs }) => {
         ))}
       </ol>
     </nav>
-
   )
 }

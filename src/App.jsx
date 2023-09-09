@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { Header } from './components'
+import { Drawer, Header } from './components'
 import { ProductListPage, ProductDetailsPage } from './pages'
 
 function App () {
@@ -33,6 +33,7 @@ function App () {
             />
           </Routes>
         </main>
+        <Drawer />
       </BrowserRouter>
     </QueryClientProvider>
   )

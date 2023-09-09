@@ -4,12 +4,12 @@ import { useStore } from '../services/store'
 
 export const Actions = ({ product }) => {
   const [cartProduct, setCartProduct] = useState({
-    id: product.id,
-    colorCode: product.options.colors[0].code,
-    storageCode: product.options.storages[0].code
+    product,
+    color: 0,
+    storage: 0
   })
 
-  const { /* cart, */ addToCart } = useStore(state => state)
+  const { addToCart } = useStore(state => state)
 
   const handleOnChange = ({ target }) => {
     setCartProduct(oldCartProduct => ({ ...oldCartProduct, [target.name]: Number(target.value) }))
@@ -28,10 +28,10 @@ export const Actions = ({ product }) => {
             <select
               className='block w-full p-2 mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring focus:ring-cyan-600 focus:border-cyan-500 focus-visible:outline-none'
               onChange={handleOnChange}
-              name='colorCode'
+              name='color'
               value={cartProduct.colorCode}
             >
-              {product.options.colors.map(color => <option key={color.code} value={color.code}>{color.name}</option>)}
+              {product.options.colors.map((color, i) => <option key={color.code} value={i}>{color.name}</option>)}
             </select>
           </div>
           <div>
@@ -39,10 +39,10 @@ export const Actions = ({ product }) => {
             <select
               className='block w-full p-2 mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring focus:ring-cyan-600 focus:border-cyan-500 focus-visible:outline-none'
               onChange={handleOnChange}
-              name='storageCode'
+              name='storage'
               value={cartProduct.storageCode}
             >
-              {product.options.storages.map(storage => <option key={storage.code} value={storage.code}>{storage.name}</option>)}
+              {product.options.storages.map((storage, i) => <option key={storage.code} value={i}>{storage.name}</option>)}
             </select>
           </div>
           <button
@@ -53,7 +53,6 @@ export const Actions = ({ product }) => {
           </button>
         </li>
       </ul>
-      {/* <pre>{JSON.stringify(cart, null, 2)}</pre> */}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SeparatorIcon } from '../icons'
 
 export const ProductItem = ({ product }) => {
   return (
@@ -16,9 +17,7 @@ export const ProductItem = ({ product }) => {
             <span className='text-3xl font-bold text-gray-900'>{product.price}€</span>
             <div className='inline-flex items-center font-medium text-cyan-600 hover:text-cyan-800'>
               Ver más
-              <svg className='w-2.5 h-2.5 ml-2' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 6 10'>
-                <path stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='m1 9 4-4-4-4' />
-              </svg>
+              <SeparatorIcon className='text-cyan-600' />
             </div>
           </div>
         </div>

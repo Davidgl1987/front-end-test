@@ -1,5 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Toaster } from 'react-hot-toast'
 import { Drawer, Header } from './components'
 import { ProductListPage, ProductDetailsPage } from './pages'
 
@@ -34,6 +35,7 @@ function App () {
           </Routes>
         </main>
         <Drawer />
+        <Toaster position='bottom-center' />
       </BrowserRouter>
     </QueryClientProvider>
   )

@@ -22,8 +22,8 @@ export const Drawer = () => {
           <header className='p-4 font-bold text-lg text-center'>Carrito</header>
           <div className='p-4 pt-0'>
             {cart.length === 0 && <div className='text-center'>No has añadido productos a la cesta</div>}
-            {cart.length > 0 && cart.map(({ product, color, storage }) => (
-              <ul className='mb-2' key={product.id}>
+            {cart.length > 0 && cart.map(({ product, color, storage }, i) => (
+              <ul className='mb-2' key={`${product.id}-${i}`}>
                 <li className='flex justify-center px-4 py-6 hover:bg-cyan-200 rounded-xl'>
                   <img className='w-16 h-16' src={product.imgUrl} alt='Bonnie image' />
                   <div className='pl-6 flex flex-col justify-center'>
@@ -34,7 +34,6 @@ export const Drawer = () => {
                   </div>
                 </li>
               </ul>))}
-            {/* <pre className='text-red-300'>{JSON.stringify(cart, null, 2)}</pre> */}
           </div>
         </article>
       </section>

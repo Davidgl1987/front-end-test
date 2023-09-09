@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { CartIcon } from '../icons'
-import { useStore } from '../services/store'
+import { useStore } from '../services'
+import { useCart } from '../hooks'
 
 export const Actions = ({ product }) => {
   const [cartProduct, setCartProduct] = useState({
@@ -11,12 +13,25 @@ export const Actions = ({ product }) => {
 
   const { addToCart } = useStore(state => state)
 
+  const { mutateAsync } = useCart()
+
   const handleOnChange = ({ target }) => {
     setCartProduct(oldCartProduct => ({ ...oldCartProduct, [target.name]: Number(target.value) }))
   }
 
   const onAddToCart = () => {
-    addToCart(cartProduct)
+    const { color, storage, product } = cartProduct
+    const colorCode = product.options.colors[color].code
+    const storageCode = product.options.storages[storage].code
+    mutateAsync({ id: product.id, colorCode, storageCode })
+      .then(response => {
+        console.log({ response })
+        addToCart(cartProduct)
+        toast.success('Producto añadido correctamente')
+      })
+      .catch(error => {
+        toast.error(`Error: ${error.message}`)
+      })
   }
 
   return (

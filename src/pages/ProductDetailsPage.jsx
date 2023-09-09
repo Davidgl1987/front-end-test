@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
-import { Actions, Breadcrumbs, Description, Error, Image, Loader } from '../components'
+import { toast } from 'react-hot-toast'
+import { Actions, Breadcrumbs, Description, Image, Loader } from '../components'
 import { useProductDetail } from '../hooks/useProductDetail'
 
 export const ProductDetailsPage = () => {
@@ -9,7 +10,7 @@ export const ProductDetailsPage = () => {
 
   if (isLoading) return <Loader />
 
-  if (error) return <Error text={error.message} />
+  if (error) toast.error(`Error: ${error.message}`)
 
   return (
     <div className='max-w-screen-xl mx-auto p-4'>

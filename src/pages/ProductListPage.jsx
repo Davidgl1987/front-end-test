@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Breadcrumbs, Error, Loader, ProductItem, Search } from '../components'
+import { toast } from 'react-hot-toast'
+import { Breadcrumbs, Loader, ProductItem, Search } from '../components'
 import { useProducts } from '../hooks'
 
 export const ProductListPage = () => {
@@ -12,7 +13,7 @@ export const ProductListPage = () => {
 
   if (isLoading) return <Loader />
 
-  if (error) return <Error text={error.message} />
+  if (error) toast.error(error.message)
 
   const filterProducts = (word) => {
     const searchedProducts = products.filter(product => product.brand.toLowerCase().includes(word.toLowerCase()) || product.model.toLowerCase().includes(word.toLowerCase()))

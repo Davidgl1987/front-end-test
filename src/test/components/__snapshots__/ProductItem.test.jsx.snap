@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductItem > Snapshot 1`] = `
+<div>
+  <div
+    class="w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all"
+  >
+    <a
+      data-testid="product-item-link"
+      href="/product/123"
+    >
+      <img
+        alt="Image of Samsung Galaxy"
+        class="p-8 mx-auto"
+        src="https://samsung.com/galaxy.jpg"
+      />
+      <div
+        class="px-5 pb-5"
+      >
+        <h5
+          class="text-xl font-semibold tracking-tight text-gray-900"
+        >
+          Galaxy
+        </h5>
+        <span
+          class="text-sm text-gray-500"
+        >
+          Samsung
+        </span>
+        <div
+          class="flex items-center justify-between"
+        >
+          <span
+            class="text-3xl font-bold text-gray-900"
+          >
+            100
+            €
+          </span>
+          <div
+            class="inline-flex items-center font-medium text-cyan-600 hover:text-cyan-800"
+          >
+            Ver más
+            <svg
+              aria-hidden="true"
+              class="text-cyan-600"
+              fill="none"
+              height="1em"
+              viewBox="0 0 6 10"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m1 9 4-4-4-4"
+                stroke="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+`;

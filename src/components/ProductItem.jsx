@@ -4,7 +4,7 @@ import { SeparatorIcon } from '../icons'
 export const ProductItem = ({ product }) => {
   return (
     <div className='w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all'>
-      <Link to={`product/${product.id}`}>
+      <Link to={`product/${product.id}`} data-testid='product-item-link'>
         <img
           className='p-8 mx-auto'
           src={product.imgUrl}

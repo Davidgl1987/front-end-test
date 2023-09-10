@@ -1,4 +1,6 @@
-export const URL_API_PRODUCTS = 'https://itx-frontend-test.onrender.com/api'
+export const URL_API_PRODUCTS = import.meta.env.PROD
+  ? 'https://itx-frontend-test.onrender.com/api'
+  : 'https://itx-frontend-test.onrender.com/api'
 
 export const fetchProducts = async () => {
   const response = await fetch(`${URL_API_PRODUCTS}/product`)

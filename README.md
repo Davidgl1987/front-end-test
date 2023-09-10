@@ -1,7 +1,12 @@
 # Front-end test
 <p align="center">
-  <img src="https://front-end-test-davidgl1987.vercel.app/mobile-store.svg" alt="Texto alternativo" width="200" height="150">
+  <a href="https://front-end-test-davidgl1987.vercel.app">
+    <img src="https://front-end-test-davidgl1987.vercel.app/mobile-store.svg" alt="Texto alternativo" width="200" height="150">
+    <br>
+    <span>Ver demo</span>
+  </a>
 </p>
+
 
 Este repositorio contiene el código para generar un proyecto de una prueba técnica de front-end con React.
 

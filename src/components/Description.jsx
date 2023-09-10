@@ -1,5 +1,3 @@
-import { Fragment } from 'react'
-
 export const Description = ({ product }) => {
   return (
     <div className='rounded-xl bg-white shadow-lg mb-4'>
@@ -36,11 +34,19 @@ export const Description = ({ product }) => {
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Cámara principal</td>
-                <td className='px-3'>{product.primaryCamera.map((cam, i) => <Fragment key={i}>{cam}&nbsp;</Fragment>)}</td>
+                <td className='px-3'>
+                  {Array.isArray(product.primaryCamera)
+                    ? product.primaryCamera.join(' ')
+                    : product.primaryCamera}
+                </td>
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Cámara secundaria</td>
-                <td className='px-3'>{product.secondaryCmera.map((cam, i) => <Fragment key={i}>{cam}&nbsp;</Fragment>)}</td>
+                <td className='px-3'>
+                  {Array.isArray(product.secondaryCmera)
+                    ? product.secondaryCmera.join(' ')
+                    : product.secondaryCmera}
+                </td>
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Dimensiones</td>

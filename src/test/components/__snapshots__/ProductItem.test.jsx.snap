@@ -7,11 +7,11 @@ exports[`ProductItem > Snapshot 1`] = `
   >
     <a
       data-testid="product-item-link"
-      href="/product/123"
+      href="product/123"
     >
       <img
         alt="Image of Samsung Galaxy"
-        class="p-8 mx-auto"
+        class="h-48 m-8 mx-auto relative"
         src="https://samsung.com/galaxy.jpg"
       />
       <div

@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom'
 import { SeparatorIcon } from '../icons'
+import { LinkWithTransition } from './LinkWithTransition'
 
 export const ProductItem = ({ product }) => {
   return (
-    <div className='w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all'>
-      <Link to={`product/${product.id}`} data-testid='product-item-link'>
+    <div
+      className='w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all'
+    >
+      <LinkWithTransition to={`product/${product.id}`} data-testid='product-item-link'>
         <img
-          className='p-8 mx-auto'
+          style={{ viewTransitionName: product.id }}
+          className='h-48 m-8 mx-auto relative'
           src={product.imgUrl}
           alt={`Image of ${product.brand} ${product.model}`}
         />
@@ -21,7 +24,7 @@ export const ProductItem = ({ product }) => {
             </div>
           </div>
         </div>
-      </Link>
+      </LinkWithTransition>
     </div>
   )
 }

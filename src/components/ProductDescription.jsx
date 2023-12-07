@@ -34,19 +34,11 @@ export const ProductDescription = ({ product }) => {
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Cámara principal</td>
-                <td className='px-3'>
-                  {Array.isArray(product.primaryCamera)
-                    ? product.primaryCamera.join(' ')
-                    : product.primaryCamera}
-                </td>
+                <td className='px-3'>{product.primaryCamera}</td>
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Cámara secundaria</td>
-                <td className='px-3'>
-                  {Array.isArray(product.secondaryCmera)
-                    ? product.secondaryCmera.join(' ')
-                    : product.secondaryCmera}
-                </td>
+                <td className='px-3'>{product.secondaryCamera}</td>
               </tr>
               <tr>
                 <td className='bg-gray-100 px-3 py-1'>Dimensiones</td>

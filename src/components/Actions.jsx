@@ -41,12 +41,14 @@ export const Actions = ({ product }) => {
         <li className='w-full px-4 py-2 sm:grid sm:grid-cols-2 sm:gap-x-4'>
           <OptionSelector
             label='Color'
+            name={'color'}
             onChange={handleOnChange}
             selected={cartProduct.colorCode}
             options={product.options.colors}
           />
           <OptionSelector
             label='Almacenamiento'
+            name={'storage'}
             onChange={handleOnChange}
             selected={cartProduct.storageCode}
             options={product.options.storages}

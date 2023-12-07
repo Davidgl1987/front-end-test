@@ -1,5 +1,6 @@
 export const OptionSelector = ({ 
-  label, 
+  label,
+  name, 
   onChange, 
   selected,
   options,
@@ -10,7 +11,7 @@ export const OptionSelector = ({
       <select
         className='block w-full p-2 mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring focus:ring-cyan-600 focus:border-cyan-500 focus-visible:outline-none'
         onChange={onChange}
-        name='storage'
+        name={name}
         value={selected}
       >
         {options.map((option, i) => <option key={option.code} value={i}>{option.name}</option>)}

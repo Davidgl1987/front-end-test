@@ -1,5 +1,5 @@
 import { SeparatorIcon } from '../icons'
-import { Image } from './Image'
+import { ProductImage } from './ProductImage'
 import { LinkWithTransition } from './LinkWithTransition'
 
 export const ProductItem = ({ product }) => {
@@ -8,7 +8,7 @@ export const ProductItem = ({ product }) => {
       className='w-full bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:ring-4 hover:ring-cyan-600 transition-all'
     >
       <LinkWithTransition to={`product/${product.id}`} data-testid='product-item-link'>
-        <Image product={product} className='h-48 m-8 mx-auto relative' />
+        <ProductImage product={product} className='h-48 m-8 mx-auto relative' />
         <div className='px-5 pb-5'>
           <h5 className='text-xl font-semibold tracking-tight text-gray-900'>{product.model}</h5>
           <span className='text-sm text-gray-500'>{product.brand}</span>

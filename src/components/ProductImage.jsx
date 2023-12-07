@@ -1,4 +1,4 @@
-export const Image = ({ product, className }) => {
+export const ProductImage = ({ product, className }) => {
   return (
     <img
       className={className}

@@ -1,4 +1,4 @@
-export const Description = ({ product }) => {
+export const ProductDescription = ({ product }) => {
   return (
     <div className='rounded-xl bg-white shadow-lg mb-4'>
       <ul>

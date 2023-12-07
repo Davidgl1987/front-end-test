@@ -1,12 +1,10 @@
-export const Image = ({ product }) => {
+export const Image = ({ product, className }) => {
   return (
-    <figure className='rounded-xl bg-white h-fit shadow-lg'>
-      <img
-        style={{ viewTransitionName: product.id }}
-        className='h-96 w-72 my-8 mx-auto '
-        src={product.imgUrl}
-        alt={`Image of ${product.brand} ${product.model}`}
-      />
-    </figure>
+    <img
+      className={className}
+      style={{ viewTransitionName: product.id }}
+      src={product.imgUrl}
+      alt={`Image of ${product.brand} ${product.model}`}
+    />
   )
 }
